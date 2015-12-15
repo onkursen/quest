@@ -3,22 +3,14 @@
 # # # # # # # #
 
 # Basic
-name:               "Kiko"
+name:               "Onkur Sen"
 
 # URL
-baseurl:            ""
-#baseurl:            "" #For Root Domain
-permalink:          /:year/:month/:day/:title.html
+baseurl:            "http://onkursen.github.io/quest"
+permalink:          /:categories/:year/:month/:day/:title.html
 
 # Markdown
-markdown:           rdiscount
-
-# Navigation
-nav:
-  - name:           "About"
-    href:           "//kiko.gfjaru.com/about"
-  - name:           "Download"
-    href:           "//github.com/gfjaru/Kiko/releases"
+markdown:           kramdown
 
 # Sass
 sass:
@@ -26,12 +18,6 @@ sass:
 
 # Scopes
 defaults:
-  -
-    scope:
-      path:         ""
-      type:         "pages"
-    values:
-      layout:       "page"
   -
     scope:
       path:         ""

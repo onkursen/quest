@@ -17,7 +17,6 @@ html {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.6;
 
   @media (min-width: 38em) {
     font-size: 20px;
@@ -52,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2rem;
+
+  small {
+    color: #bbb;
+  }
 }
 
 h2 {
@@ -67,7 +70,7 @@ h4, h5, h6 {
 }
 
 p {
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
 }
 
 ul, ol, dl {
@@ -264,13 +267,13 @@ tbody tr:nth-child(odd) th {
   margin-right: auto;
 
   @media (min-width: 38rem){
-    padding: 5rem 1rem;
+    padding: 3rem 1rem;
   }
 }
 
 .masthead {
 
-  &-title {
+  .masthead-title {
     font-weight: 300;
 
     a {
@@ -283,12 +286,12 @@ tbody tr:nth-child(odd) th {
     }
 
     span {
-      color: #ddd;
+      color: #ccc;
     }
 
   }
 
-  &-title--small {
+  .masthead-title--small {
     margin-bottom: .75rem;
     font-size: .75rem;
     font-weight: 600;
@@ -305,7 +308,7 @@ tbody tr:nth-child(odd) th {
   }
 
   .masthead-nav {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     a {
       color: #aaa;
@@ -330,24 +333,24 @@ tbody tr:nth-child(odd) th {
 }
 
 .page {
-  &-title {
+  .page-title {
     margin-bottom: 2rem;
   }
 }
 
 .post {
-  &-title {
+  .post-title {
     margin-bottom: .25rem;
   }
-  &-date {
-    margin-bottom: 2rem;
+  .post-date {
+    margin-bottom: 1rem;
     font-size: .75rem;
     text-transform: uppercase;
   }
 }
 
 .list {
-  &-post-title {
+  .list-post-title {
     margin-bottom: .25rem;
 
     a {
@@ -359,7 +362,7 @@ tbody tr:nth-child(odd) th {
       }
     }
   }
-  &-post-date {
+  .list-post-date {
     margin-bottom: 1rem;
     font-size: .75rem;
     text-transform: uppercase;
@@ -370,6 +373,10 @@ tbody tr:nth-child(odd) th {
   a {
     color: #333;
   }
+}
+
+.posts-by-tag li {
+  line-height: 1;
 }
 
 .highlight .hll { background-color: #ffffcc }

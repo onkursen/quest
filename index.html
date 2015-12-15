@@ -1,29 +1,38 @@
 ---
 layout: default
 ---
-<header class="masthead">
-  <h1 class="masthead-title">
-    <a href="{{ site.baseurl }}/">{{ site.name }}<span>&#39;s blog</span></a>
-  </h1>
-  <nav class="masthead-nav">
-    {% for nav in site.nav %}
-    <a href="{{ nav.href }}">{{ nav.name }}</a>
-    {% endfor %}
-  </nav>
-</header>
-<div class="content list">
-{% if site.posts.size == 0 %}
-  <h2>No post found</h2>
-{% else %}
-{% for post in site.posts %}
-  <div class="list-item">
-    <h2 class="list-post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </h2>
-    <div class="list-post-date">
-      <time>{{ post.date | date_to_string }}</time>
-    </div>
-  </div>
+<p>
+  Hi, I'm <a href="http://onkursen.com">Onkur</a>.
+  I enjoy learning about new things.
+  However, in a world ruled by short, pithy forms of communication like
+  tweets and articles, I want to retain the ability to focus and
+  consume long-form content.
+</p>
+<p>
+  Thus, I have been tracking and providing commentary on the books and
+  other forms of knowledge that I consume. This codifies the concepts for me
+  and provides recommendations for you.
+</p>
+<p>
+  Thanks for stopping by!
+  Say hi via <a href="mailto:onkursen@gmail.com">email</a> or
+  <a href="http://twitter.com/onkursen">Twitter</a>.
+</p>
+
+{% for tag in site.categories %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+
+<h2>{{ t | capitalize }}</h2>
+<ul class="posts-by-tag">
+{% for post in posts %}
+  {% if post.categories contains t %}
+  <li>
+    <span class="date">{{ post.date | date: "%Y-%m-%d"  }}</span>:
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>,
+    by {{ post.writer }}
+  </li>
+  {% endif %}
 {% endfor %}
-{% endif %}
-</div>
+</ul>
+{% endfor %}

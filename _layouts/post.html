@@ -1,15 +1,18 @@
 ---
 layout: default
 ---
-<header class="masthead">
-  <h1 class="masthead-title--small">
-    <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-  </h1>
-</header>
 <div class="content post">
-  <h1 class="post-title">{{ page.title }}</h1>
+  <h1 class="post-title">
+    {{ page.title }}
+    <br />
+    <small>{{ page.writer }}</small>
+  </h1>
   <div class="post-date">
-    <time>{{ page.date | date_to_string }}</time>
+    <time>{{ page.date | date: "%B %-d, %Y" }}</time>
   </div>
+
+  <a href={{ page.amazonUrl }}>
+    <img src={{ page.imageUrl }} align="right" height="250" style="margin: auto auto 1rem 1rem;" />
+  </a>
   {{ content }}
 </div>
